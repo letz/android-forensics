@@ -4,5 +4,7 @@
     <string name="app_name">AndroidForensics</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="export_contacts">Export Contacts</string>
+    <string name="export_call_logs">Export Call Log</string>
 
 </resources>

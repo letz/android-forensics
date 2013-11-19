@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="9"
-        android:targetSdkVersion="18" />
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
@@ -22,6 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="pt.ist.androidforensics.ExportContacts"></activity>
+        <activity android:name="pt.ist.androidforensics.ExportCallLog"></activity>
     </application>
 
 </manifest>
