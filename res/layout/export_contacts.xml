@@ -6,6 +6,7 @@
 
     <ListView
         android:id="@+id/contacts"
+        android:background="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
     </ListView>
