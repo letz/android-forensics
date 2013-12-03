@@ -1,6 +1,7 @@
 package pt.ist.androidforensics;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -19,5 +20,10 @@ public class MainActivity extends Activity {
 	public void _exportCallLog(View v) {
 
 	}
+	
+	public void _exportMessages(View v) {
+		Intent i = new Intent(getApplicationContext(), ExportMessages.class);
+		startActivity(i);
 
+	}
 }
