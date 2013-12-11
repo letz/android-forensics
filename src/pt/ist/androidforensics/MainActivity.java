@@ -14,11 +14,14 @@ public class MainActivity extends Activity {
 	}
 
 	public void _exportContacts(View v) {
+		Intent i = new Intent(getApplicationContext(), ExportContacts.class);
+		startActivity(i);
 
 	}
 
 	public void _exportCallLog(View v) {
-
+		Intent i = new Intent(getApplicationContext(), ExportContacts.class);
+		startActivity(i);
 	}
 	
 	public void _exportMessages(View v) {
