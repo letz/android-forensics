@@ -16,7 +16,13 @@
         android:gravity="center"
         android:onClick="_exportContacts"
         android:text="@string/export_contacts" />
-
+    <Button
+        android:id="@+id/button_export_messages"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="_exportMessages"
+        android:text="@string/export_messages" />
     <Button
         android:id="@+id/button_export_call_log"
         android:layout_width="match_parent"
