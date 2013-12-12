@@ -4,6 +4,13 @@
     android:layout_height="wrap_content"
     android:orientation="vertical" >
 
+    <Button
+        android:id="@+id/exportContacts"
+        android:layout_width="match_parent"
+        android:onClick="_exportContacts"
+        android:layout_height="wrap_content"
+        android:text="@string/export_contacts" />
+
     <ListView
         android:id="@+id/contacts"
         android:background="@android:color/black"

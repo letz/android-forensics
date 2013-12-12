@@ -6,21 +6,14 @@ import android.database.Cursor;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.CommonDataKinds.Email;
 
-public class Contact {
+public class Contact extends Model {
 
 	private String mName;
-	private int mId;
 	private ArrayList<String> mPhones = new ArrayList<String>();
 	private ArrayList<String> mEmails = new ArrayList<String>();
-	private ArrayList<String> mAddresses = new ArrayList<String>();
 
-	public int getId() {
-		return mId;
-	}
-
-	public void setId(int mId) {
-		this.mId = mId;
-	}
+	private static int mEmailsMax;
+	private static int mPhonesMax;
 
 	public String getName() {
 		return mName;
@@ -46,34 +39,47 @@ public class Contact {
 		this.mEmails = mEmails;
 	}
 
-	public ArrayList<String> getAddresses() {
-		return mAddresses;
-	}
-
-	public void setAddresses(ArrayList<String> mAddresses) {
-		this.mAddresses = mAddresses;
-	}
-
 	public void parseEmailsFromCursor(Cursor emails){
 		while (emails.moveToNext()) {
 			mEmails.add(emails.getString(emails.getColumnIndex(Email.DATA)));
 		}
 		emails.close();
+		if(mEmailsMax < mEmails.size())
+			mEmailsMax = mEmails.size();
 	}
 
 	public void parsePhonesFromCursor(Cursor cursor) {
 		while (cursor.moveToNext())
 			mPhones.add(cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER)));
 		cursor.close();
+		if(mPhonesMax < mPhones.size())
+			mPhonesMax = mPhones.size();
 	}
 
-	public void parseAddressesFromCursor(Cursor cursor){
-
-	}
 	@Override
 	public String toString() {
 		return "Contact [mName=" + mName + ", mPhones=" + mPhones
-				+ ", mEmails=" + mEmails + ", mAddresses=" + mAddresses + "]";
+				+ ", mEmails=" + mEmails + "]";
+	}
+
+	@Override
+	public String toCSV() {
+		String csv = mName;
+		for(int i = 0 ; i < mPhonesMax ; ++i )
+			csv += i < mPhones.size() ? "#" + mPhones.get(i) : "#";
+		for(int i = 0 ; i < mEmailsMax ; ++i )
+			csv += i < mEmails.size() ? "#" + mEmails.get(i) : "#";
+		return csv;
+	}
+
+	@Override
+	public String toCSVHeader() {
+		String header = "Name";
+		for(int i = 0 ; i < mPhonesMax ; ++i )
+			header += "#Phone"+(i+1);
+		for(int i = 0 ; i < mEmailsMax ; ++i )
+			header += "#Email"+(i+1);
+		return header;
 	}
 
 }
