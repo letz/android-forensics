@@ -7,5 +7,7 @@
     <string name="export_contacts">Export Contacts</string>
     <string name="export_call_logs">Export Call Log</string>
     <string name="export_messages">Export Messages</string>
+    
+    <string name="exporting_contact">Exporting contact</string>
 
 </resources>
