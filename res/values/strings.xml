@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="export_contacts">Export Contacts</string>
     <string name="export_call_logs">Export Call Log</string>
+    <string name="export_messages">Export Messages</string>
 
 </resources>

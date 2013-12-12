@@ -9,7 +9,8 @@
         android:targetSdkVersion="14" />
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -29,6 +30,8 @@
         <activity android:name="pt.ist.androidforensics.ExportContacts" >
         </activity>
         <activity android:name="pt.ist.androidforensics.ExportCallLog" >
+        </activity>
+        <activity android:name="pt.ist.androidforensics.ExportMessages" >
         </activity>
     </application>
 
