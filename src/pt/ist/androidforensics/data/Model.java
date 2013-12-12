@@ -1,5 +1,6 @@
 package pt.ist.androidforensics.data;
 
+
 /**
  * All objects that will be exported to .csv have to extend from this class
  *
