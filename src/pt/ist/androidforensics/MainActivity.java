@@ -20,10 +20,10 @@ public class MainActivity extends Activity {
 	}
 
 	public void _exportCallLog(View v) {
-		Intent i = new Intent(getApplicationContext(), ExportContacts.class);
+		Intent i = new Intent(getApplicationContext(), ExportCallLog.class);
 		startActivity(i);
 	}
-	
+
 	public void _exportMessages(View v) {
 		Intent i = new Intent(getApplicationContext(), ExportMessages.class);
 		startActivity(i);
