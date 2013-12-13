@@ -50,12 +50,12 @@ public class Call extends Model {
 	
 	@Override
 	public String toCSV() {
-		return this.getPhoneNumber()+"\n"+this.getCallDate()+"\n"+this.getCallDuration()+"\n---------------";
+		return this.getCallType()+"#"+this.getPhoneNumber()+"#"+this.getCallDate()+"#"+this.getCallDuration();
 	}
 
 	@Override
 	public String toCSVHeader() {
-		return getCallType();
+		return "Type#PhoneNumber#Date#Duration";
 	}
 
 }
