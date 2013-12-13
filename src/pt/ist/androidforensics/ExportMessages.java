@@ -18,18 +18,18 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+
 public class ExportMessages extends Activity {
-	
+
 	public static final String TAG = ExportMessages.class.getName();
 
-	
+
 	private ListView mMessageList;
 	private ArrayList<String> strMessages = new ArrayList<String>();
 	private ArrayList<Model> messages = new ArrayList<Model>();
 	private ArrayAdapter<String> adapter;
 	private Activity mActivity;
-	
-	@SuppressWarnings("deprecation")
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -43,7 +43,7 @@ public class ExportMessages extends Activity {
 	public void _exportMessages(View v){
 		Utils.writeCSV(messages, Environment.getExternalStorageDirectory()+"/messages.csv");
 	}
-	
+
 	private class ReadMessages extends AsyncTask<Void, Integer, Void>{
 		private ProgressDialog progress;
 
@@ -90,7 +90,7 @@ public class ExportMessages extends Activity {
 		       c.close();
 		       return null;
 		}
-		
+
 
 	}
 }
