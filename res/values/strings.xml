@@ -10,4 +10,6 @@
     
     <string name="exporting_contact">Exporting contact</string>
 
+    <string name="exporting_messages">Exporting messages</string>
+    
 </resources>

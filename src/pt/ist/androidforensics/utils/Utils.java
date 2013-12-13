@@ -6,6 +6,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import android.util.Log;
+
 import pt.ist.androidforensics.data.Model;
 
 public class Utils {
@@ -27,8 +29,13 @@ public class Utils {
 		try {
 			BufferedWriter buf = new BufferedWriter(new FileWriter(logFile,	true));
 			buf.append(models.get(0).toCSVHeader());
+			Log.d("saved file header", models.get(0).toCSVHeader() );
+
 			buf.newLine();
 			for (Model m : models) {
+				Log.d("saved file",m.toString() );
+				Log.d("saved file CSV --->",m.toCSV());
+
 				buf.append(m.toCSV());
 				buf.newLine();
 			}

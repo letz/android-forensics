@@ -9,17 +9,22 @@ public class Sms extends Model {
 	private String read;
 	private String type;
 	
-	public Sms(String body, String address, String date, String read, String type){
-		this.setAddress(address);
-		this.setBody(body);
-		this.setDate(date);
-		this.setRead(read);
-		this.setType(type);
+	public Sms(String address, String body, String date, String read, String type){
+		setAddress(address);
+		setBody(body);
+		setDate(date);
+		setRead(read);
+		setType(type);
 		
 	}
 	@Override
+	public String toString() {
+		return "Sms [address=" + address + ", body=" + body + ", date=" + date
+				+ ", read=" + read + ", type=" + type + "]";
+	}
+	@Override
 	public String toCSV() {
-		return this.getAddress()+"#"+this.getBody()+"#"+this.getDate()+"#"+this.getRead()+"#"+this.getType();
+		return getAddress() + "#" + getBody()+ "#" + getDate() + "#" + getRead() + "#" + getType();
 	}
 
 	@Override
