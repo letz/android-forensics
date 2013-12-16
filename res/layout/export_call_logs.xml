@@ -3,11 +3,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
-
-    <ListView
-        android:id="@+id/call_logs"
+	
+    <Button
+        android:id="@+id/exportCallLog"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
-
+        android:onClick="_exportMessages"
+        android:layout_height="wrap_content"
+        android:text="@string/export_call_logs" />
+    
+	    <ListView
+	        android:id="@+id/calls"
+	        android:background="@android:color/black"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" >
+	    </ListView>
 </LinearLayout>
+

@@ -16,6 +16,13 @@ public class Call extends Model {
 		this.callDuration = duration;
 	}
 	
+	@Override
+	public String toString() {
+		return "Call [phoneNumber=" + phoneNumber + ", callType=" + callType
+				+ ", callDate=" + callDate + ", callDuration=" + callDuration
+				+ "]";
+	}
+
 	public void setPhoneNumber(String number) {
 		this.phoneNumber = number;
 	}
